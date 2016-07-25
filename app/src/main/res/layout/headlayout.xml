@@ -8,5 +8,11 @@
         android:layout_height="match_parent"
         android:id="@+id/headViewpager">
     </android.support.v4.view.ViewPager>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="#88888888"
+        android:layout_alignBottom="@+id/header_viewPager">
+        </RelativeLayout>
 
 </LinearLayout>

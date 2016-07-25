@@ -16,6 +16,7 @@ public class PersonFragment extends Fragment {
 
 
     public PersonFragment() {
+
         // Required empty public constructor
     }
 

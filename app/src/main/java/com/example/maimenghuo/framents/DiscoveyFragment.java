@@ -16,6 +16,7 @@ public class DiscoveyFragment extends Fragment {
 
 
     public DiscoveyFragment() {
+
         // Required empty public constructor
     }
 
