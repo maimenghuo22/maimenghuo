@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
     private void initView() {
         pager = (ViewPager) findViewById(R.id.main_viewPager);
-        layout=(LinearLayout)findViewById(R.id.main_layout);
+
         int count=layout.getChildCount();
         image=new ArrayList<ImageView>();
         data=new ArrayList<>();
@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         adapter=new MainPagerAdapter(getSupportFragmentManager(),data);
         pager.setAdapter(adapter);
         pager.setOnPageChangeListener(this);
+        layout=(LinearLayout)findViewById(R.id.main_layout);
 
         for (int i = 0; i <count ; i++) {
             final int j=i;
