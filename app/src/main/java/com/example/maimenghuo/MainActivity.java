@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
     private void initView() {
         pager = (ViewPager) findViewById(R.id.main_viewPager);
+        layout= (LinearLayout) findViewById(R.id.main_layout);
         layout=(LinearLayout) findViewById(R.id.main_layout);
         int count=layout.getChildCount();
         image=new ArrayList<ImageView>();
@@ -69,7 +70,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
             image.add(iv);
         }
         image.get(0).setSelected(true);
-
 
     }
 

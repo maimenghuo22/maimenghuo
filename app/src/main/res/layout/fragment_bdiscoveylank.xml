@@ -1,14 +1,117 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
+             android:orientation="vertical"
              tools:context=".framents.DiscoveyFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@android:color/holo_red_light">
+        <LinearLayout
+            android:id="@+id/search_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:background="@drawable/shape_yuanjiao"
+            >
 
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:src="@mipmap/btn_search_black"
 
-</FrameLayout>
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="搜遍天下萌物"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:background="@drawable/shape_yuanjiao"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:orientation="horizontal"
+            android:background="@android:color/white">
+        <RelativeLayout
+            android:id="@+id/tab_discovery"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/category_post"
+                android:id="@+id/discovery_iv"
+                android:layout_toLeftOf="@+id/discovery_tv"/>
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="攻略"
+                android:id="@+id/discovery_tv"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true" />
+            <View
+                android:id="@+id/discovery_view"
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:layout_alignLeft="@id/discovery_tv"
+                android:layout_alignRight="@id/discovery_tv"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/holo_red_light"/>
+        </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/tab_goods"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/category_product"
+                    android:id="@+id/goods_iv"
+                    android:layout_toRightOf="@+id/goods_tv"/>
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="产品"
+                    android:id="@+id/goods_tv"
+                    android:textSize="15sp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true" />
+                <View
+                    android:id="@+id/goods_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:layout_alignLeft="@id/goods_tv"
+                    android:layout_alignRight="@id/goods_tv"
+                    android:layout_alignParentBottom="true"
+                    android:background="@android:color/holo_red_light"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/discovery_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6">
+    </android.support.v4.view.ViewPager>
+</LinearLayout>
