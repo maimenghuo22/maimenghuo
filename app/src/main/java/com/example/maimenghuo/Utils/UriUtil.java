@@ -6,6 +6,13 @@ package com.example.maimenghuo.Utils;
 public class UriUtil {
     //轮播
     public final static String headUri="http://api.maimenghuo.com/v2/banners";
+    //签到换礼
+    public final static String goodURi="http://api.maimenghuo.com/v2/secondary_banners";
+//首页
+public final static String homeURi="http://api.maimenghuo.com/v2/posts?limit=20&offset=0" ;
+
+
+
    //热门攻略
     public final static String HOT_DISCOVERY_URI="http://api.maimenghuo.com/v2/collections?limit=10&offset=0";
     //栏目专区及以下

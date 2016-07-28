@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.maimenghuo.NewsActivity">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:background="#f00"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:onClick="onClick"
+            android:clickable="true"
+            android:id="@+id/btn_news_back"
+            android:src="@mipmap/ic_action_back"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"/>
+        <TextView
+            android:textColor="#fff"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:text="商品详情"
+            android:layout_marginTop="20dp"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="50dp"/>
+        <ImageView
+            android:clickable="true"
+            android:onClick="onClick"
+            android:id="@+id/btn_news_share"
+            android:layout_marginTop="20dp"
+            android:src="@mipmap/ic_action_compact_share"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"/>
+
+
+    </LinearLayout>
+    <WebView
+        android:id="@+id/web_news"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"></WebView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+        <TextView
+            android:onClick="onClick"
+            android:clickable="true"
+            android:id="@+id/tv_news_like"
+            android:drawableLeft="@mipmap/icon_favorite_selected"
+            android:layout_marginLeft="10dp"
+            android:text="  喜欢"
+            android:textColor="#f00"
+            android:gravity="center"
+          android:background="@drawable/button_style"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"/>
+        <TextView
+            android:onClick="onClick"
+            android:clickable="true"
+            android:id="@+id/tv_news_buy"
+            android:layout_marginLeft="20dp"
+            android:text="   去淘宝购买"
+            android:textSize="15sp"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:background="@drawable/button_style1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="30dp"/>
+    </LinearLayout>
+
+</LinearLayout>

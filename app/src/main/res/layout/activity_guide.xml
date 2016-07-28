@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.maimenghuo.GuideActivity">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:background="#f00"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:onClick="onClick"
+            android:clickable="true"
+            android:id="@+id/guide_news_back"
+            android:src="@mipmap/ic_action_back"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"/>
+        <TextView
+            android:id="@+id/tv_guide_title"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:textSize="30dp"
+
+            android:layout_marginTop="20dp"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="50dp"/>
+        <ImageView
+            android:clickable="true"
+            android:onClick="onClick"
+            android:id="@+id/guide_news_share"
+            android:layout_marginTop="20dp"
+            android:src="@mipmap/ic_action_compact_share"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"/>
+
+
+    </LinearLayout>
+    <ListView
+        android:id="@+id/lv_guide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        ></ListView>
+
+</LinearLayout>

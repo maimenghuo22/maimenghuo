@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:background="#88888888"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:layout_height="200dp">
+              android:layout_height="250dp">
     <android.support.v4.view.ViewPager
         android:layout_above="@+id/scollview"
         android:layout_width="match_parent"
@@ -10,16 +10,18 @@
     </android.support.v4.view.ViewPager>
 
     <RelativeLayout
+
         android:id="@+id/relave"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="#88888888"
+
         android:layout_alignBottom="@+id/headViewpager">
         <!--android:background="#55534d32"-->
 
         <LinearLayout
+
             android:id="@+id/point_layout"
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="20dp"
             android:layout_centerVertical="true"
             android:layout_centerInParent="true"
@@ -30,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/header_imageView1"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="10dp"
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/point" />
 
@@ -38,34 +40,36 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/header_imageView2"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="10dp"
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/point" />
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="10dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginRight="2dp"
+
                 android:src="@drawable/point" />
             <ImageView
+                android:layout_gravity="center_vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/header_imageView4"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="2dp"
+                android:layout_marginLeft="10dp"
+
                 android:src="@drawable/point" />
 
 
         </LinearLayout>
     </RelativeLayout>
-    <ScrollView
+    <HorizontalScrollView
+        android:layout_marginTop="15dp"
        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:id="@+id/scollview"
         android:layout_height="60dp">
 
-    </ScrollView>
+    </HorizontalScrollView>
 
 
 </RelativeLayout>
