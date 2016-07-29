@@ -82,19 +82,13 @@ public class DiscoveyFragment extends Fragment {
         tabDiscovery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                discoveryIV.setVisibility(View.VISIBLE);
-                discoveryView.setVisibility(View.VISIBLE);
-                goodsIV.setVisibility(View.INVISIBLE);
-                goodsView.setVisibility(View.INVISIBLE);
+                viewPager.setCurrentItem(0);
             }
         });
         tabGoods.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                discoveryIV.setVisibility(View.INVISIBLE);
-                discoveryView.setVisibility(View.INVISIBLE);
-                goodsIV.setVisibility(View.VISIBLE);
-                goodsView.setVisibility(View.VISIBLE);
+                viewPager.setCurrentItem(1);
             }
         });
         //viewPager的监听事件

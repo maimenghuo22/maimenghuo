@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.maimenghuo.GoodsItemActivity">
+    <RelativeLayout
+        android:id="@+id/goods_item_relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_weight="1"
+        android:background="@android:color/holo_red_light">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:onClick="backClick"
+            android:src="@mipmap/ic_action_back" />
+        <TextView
+            android:id="@+id/goodsItem_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品名称"
+            android:textSize="25sp"
+            android:textColor="@android:color/white"
+            android:layout_centerInParent="true" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_menu_sort"
+            android:onClick="sortClick"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+   <android.support.v7.widget.RecyclerView
+       android:id="@+id/goodsItemRecyclerView"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_below="@id/goods_item_relativeLayout"
+       >
+   </android.support.v7.widget.RecyclerView>
+</RelativeLayout>

@@ -1,6 +1,7 @@
 package com.example.maimenghuo.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.maimenghuo.DiscoveryItemActivity;
 import com.example.maimenghuo.R;
 import com.example.maimenghuo.bean.DiscoveryItemEntry;
 import com.squareup.picasso.Picasso;
@@ -51,6 +53,17 @@ public class DiscoveryRecylerAdapter extends RecyclerView.Adapter<DiscoveryRecyl
                     .config(Bitmap.Config.RGB_565)
                     .into(holder.iv);
         }
+        final int id = data.get(position).getId();
+        final String name = data.get(position).getName();
+        holder.iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(context, DiscoveryItemActivity.class);
+                intent.putExtra("id",id);
+                intent.putExtra("name",name);
+                context.startActivity(intent);
+            }
+        });
     }
     @Override
     public int getItemCount() {

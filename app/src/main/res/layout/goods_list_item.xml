@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gooods_list_IV"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ig_holder_image_large" />
+    <com.example.maimenghuo.customView.FlowLayout
+        android:id="@+id/gooods_list_FL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp">
+    </com.example.maimenghuo.customView.FlowLayout>
+</LinearLayout>

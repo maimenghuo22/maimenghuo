@@ -32,30 +32,66 @@
         android:id="@+id/web_tool"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="10"/>
+        android:layout_weight="10" />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="50dp">
-        <ImageView
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:src="@mipmap/icon_favorite"
-            />
-        <ImageView
-            android:layout_marginTop="10dp"
-            android:src="@mipmap/ic_action_compact_share"
+            android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center|center_vertical"
+            android:onClick="likeClick"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/ic_action_compact_favourite_unselected"
+                />
+            <TextView
+                android:id="@+id/discoveryDetail_likeNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"/>
+        </LinearLayout>
+         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="30dp"/>
-        <ImageView
-            android:layout_marginTop="10dp"
-            android:src="@mipmap/icon_message"
-            android:layout_weight="1"
+            android:layout_height="match_parent"
+             android:layout_weight="1"
+             android:gravity="center"
+             android:onClick="shareClick"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/ic_menu_share"
+                />
+            <TextView
+                android:id="@+id/discoveryDetail_shareNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"/>
+        </LinearLayout>
+         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="30dp"/>
+            android:layout_height="match_parent"
+             android:layout_weight="1"
+             android:gravity="center"
+             android:onClick="messageClick"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/icon_message"
+                />
+            <TextView
+                android:id="@+id/discoveryDetail_msgNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"/>
+        </LinearLayout>
+
     </LinearLayout>
 
 

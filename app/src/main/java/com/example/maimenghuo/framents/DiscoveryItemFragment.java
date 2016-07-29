@@ -1,6 +1,7 @@
 package com.example.maimenghuo.framents;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.example.maimenghuo.AllDiscoveryActivity;
 import com.example.maimenghuo.R;
 import com.example.maimenghuo.Utils.UriUtil;
 import com.example.maimenghuo.adapter.DiscoveryGridAdapter;
@@ -55,7 +57,6 @@ public class DiscoveryItemFragment extends Fragment {
 
     private void initView() {
         //热门攻略
-        moreLayout = (LinearLayout) view.findViewById(R.id.more_layout);
         hotGridView = (GridViewForScrollView) view.findViewById(R.id.hotGridView);
         gridAdapter=new DiscoveryGridAdapter(getActivity());
         hotGridView.setAdapter(gridAdapter);
@@ -63,6 +64,16 @@ public class DiscoveryItemFragment extends Fragment {
         listView = (ListViewForScrollView) view.findViewById(R.id.discovery_item_listView);
         listAdapter = new DiscoveryListAdapter(getActivity());
         listView.setAdapter(listAdapter);
+        //查看更多和点击事件
+        moreLayout = (LinearLayout) view.findViewById(R.id.more_layout);
+        moreLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), AllDiscoveryActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
     private void initListData() {
         OkHttpClient httpClient=new OkHttpClient();

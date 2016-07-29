@@ -9,10 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.maimenghuo.DiscoveryActivity;
 import com.example.maimenghuo.R;
-import com.example.maimenghuo.bean.HotDiscoveryEnty;
+import com.example.maimenghuo.bean.AllDiscoveryEntry;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -21,18 +22,18 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/7/26.
  */
-public class DiscoveryGridAdapter extends BaseAdapter {
-    private List<HotDiscoveryEnty.DataBean.CollectionsBean> data;
+public class AllDiscoveryListAdapter extends BaseAdapter {
+    private List<AllDiscoveryEntry.DataBean.CollectionsBean> data;
     private Context context;
     private LayoutInflater inflater;
 
-    public DiscoveryGridAdapter(Context context) {
+    public AllDiscoveryListAdapter(Context context) {
         this.context = context;
         data=new ArrayList<>();
         inflater=LayoutInflater.from(context);
     }
 
-    public void setData(List<HotDiscoveryEnty.DataBean.CollectionsBean> data) {
+    public void setData(List<AllDiscoveryEntry.DataBean.CollectionsBean> data) {
         this.data = data;
         notifyDataSetChanged();
     }
@@ -56,15 +57,28 @@ public class DiscoveryGridAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder=null;
         if (convertView == null) {
-            convertView=inflater.inflate(R.layout.secondly_item,parent,false);
+            convertView=inflater.inflate(R.layout.all_discovery_list_item,parent,false);
             holder=new ViewHolder(convertView);
             convertView.setTag(holder);
         }else{
             holder= (ViewHolder) convertView.getTag();
         }
-        final int id = data.get(position).getId();
-        final String title = data.get(position).getTitle();
-        holder.iv.setOnClickListener(new View.OnClickListener() {
+        AllDiscoveryEntry.DataBean.CollectionsBean collectionsBean = data.get(position);
+        String cover_image_url =collectionsBean.getCover_image_url();
+        if (!TextUtils.isEmpty(cover_image_url)){
+            Picasso.with(context).load(cover_image_url).config(Bitmap.Config.RGB_565)
+                    .into(holder.cover);
+        }
+        final String title = collectionsBean.getTitle();
+        if (!TextUtils.isEmpty(title)){
+           holder.title.setText(title);
+        }
+        String subtitle = collectionsBean.getSubtitle();
+        if (!TextUtils.isEmpty(subtitle)){
+           holder.subTitle.setText(subtitle);
+        }
+        final int id = collectionsBean.getId();
+        convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(context, DiscoveryActivity.class);
@@ -73,21 +87,15 @@ public class DiscoveryGridAdapter extends BaseAdapter {
                 context.startActivity(intent);
             }
         });
-        String imagePath=data.get(position).getBanner_image_url();
-        if (!TextUtils.isEmpty(imagePath)) {
-            Picasso.with(context)
-                    .load(imagePath)
-                    .config(Bitmap.Config.RGB_565)
-                    .into(holder.iv);
-        }
-
-
         return convertView;
     }
     static class ViewHolder{
-        ImageView iv;
+        TextView title,subTitle;
+        ImageView cover;
         public ViewHolder(View itemView) {
-            iv=(ImageView) itemView.findViewById(R.id.item_imageView);
+            title=(TextView) itemView.findViewById(R.id.allDiscoveryList_title);
+            subTitle=(TextView) itemView.findViewById(R.id.allDiscoveryList_subtitle);
+            cover=(ImageView) itemView.findViewById(R.id.allDiscoveryList_IV);
         }
     }
 }
